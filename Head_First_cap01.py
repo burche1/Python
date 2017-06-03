@@ -69,7 +69,7 @@ for each_item in movies:
 
 #pág. 30 function: melhorada com código da pág. 58
 movies = ["The Holy Gray", 1975, "Terry Jones & Terry Gilliam", 91, ["Graham Chapman", ["Michael Palin", "John Cleese", "Terry Gilliam", "Eric Idle", "Terry Jones"]]]
-def print_lol(the_list, level):
+def print_lol(the_list, level=0):				 #definindo level = 0 tornamos esse argumento opcional
     for each_item in the_list:
         if isinstance(each_item, list):
             print_lol(each_item, level+1)
