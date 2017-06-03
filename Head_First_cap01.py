@@ -68,17 +68,19 @@ for each_item in movies:
 # In[20]:
 
 #pág. 30 function: melhorada com código da pág. 58
+level = 0
 movies = ["The Holy Gray", 1975, "Terry Jones & Terry Gilliam", 91, ["Graham Chapman", ["Michael Palin", "John Cleese", "Terry Gilliam", "Eric Idle", "Terry Jones"]]]
-def print_lol(the_list, level=0):				 #definindo level = 0 tornamos esse argumento opcional
+def print_lol(the_list, indent=False, level=0):				 #definindo level = 0 tornamos esse argumento opcional, e inicializamos com indent = False para que o padrão seja não ativo
     for each_item in the_list:
         if isinstance(each_item, list):
-            print_lol(each_item, level+1)
+            print_lol(each_item, True, level+1)
         else:
-            for tab_stop in range(level):
-                print ("\t", end='')
+            if indent:
+                for tab_stop in range(level):
+                    print ("\t", end='')
             print(each_item)
             
-print_lol(movies, 0)
+print_lol(movies, True, 0)				#para ativar fornecemos o parametro true
 
 
 # In[ ]:
